@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Data.Repositories.ContainerRepo;
+using Data.Repositories.VehicleRepo;
+
+namespace Data.Uow
+{
+    public interface IUnitOfWork
+    {
+        IVehicleRepository VehicleRepository { get; }
+        IContainerRepository ContainerRepository { get; }
+
+        int Complete();
+    }
+}
